@@ -1,15 +1,12 @@
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route, BrowserRouter} from 'react-router-dom'
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import ProtectedRoute from './ProtectedRoute';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './AuthContext';
+
 function App() {
 
-  return (
-    
+  return (  
     <BrowserRouter>
-    <AuthProvider>
       <Routes>
         <Route path='/login' element={<Login/>}>/</Route>
         <Route path='/admin' element={
@@ -18,9 +15,7 @@ function App() {
           </ProtectedRoute>
         }/>
       </Routes>
-    </AuthProvider>
     </BrowserRouter>
-    
   )
 }
 

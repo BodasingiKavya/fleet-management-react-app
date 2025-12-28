@@ -4,6 +4,9 @@ function Login(){
     const [email,setEmail] = useState('');
     const [password,setPassword] =useState('');
     const emailRef =useRef();
+    useEffect(()=>{
+        emailRef.current.focus();
+    },[]);
     const navigate = useNavigate();
     const {setIsAuth} = useContext(AuthContext);
 

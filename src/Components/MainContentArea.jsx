@@ -1,5 +1,5 @@
-
-function FleetCard({fleet,updatedDriver,toggleAvailable,deleteFleet}){
+import React from 'react'
+const FleetCard=({fleet,updatedDriver,toggleAvailable,deleteFleet})=>{
     const changeDriver = ()=>{
         const name = prompt("Enter Driver Name");
         if (name && name.trim())
@@ -8,7 +8,7 @@ function FleetCard({fleet,updatedDriver,toggleAvailable,deleteFleet}){
     return (
         
         <>
-            <div>
+            <div style={{border:"1px solid gray",padding:"10px"}}>
                 <p>Vehicle Registration No:{fleet.registerNo} </p>
                 <p>Category : {fleet.category}</p>
                 <p>Driver : {fleet.driverName}</p>
@@ -21,4 +21,4 @@ function FleetCard({fleet,updatedDriver,toggleAvailable,deleteFleet}){
     )
 }
 
-export default FleetCard;
+export default React.memo(FleetCard);

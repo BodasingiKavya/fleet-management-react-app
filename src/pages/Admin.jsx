@@ -27,9 +27,9 @@ function Admin(){
         <>
             <Navbar/>
             <h1>Admin Dashboard</h1>
-            <div style={{}}>
+            <div style={{ display:'flex'}}>
                 <SideBar addFleet={addFleet}></SideBar>
-                <div style={{}}>
+                <div style={{display:'grid',gridTemplateColumns:"repeat(3,1fr",gap:10}}>
                     <FleetCard key={fleets.id} fleet={fleet} updatedDriver={updatedDriver} toggleAvailable={toggleAvailable} deleteFleet={deleteFleet}></FleetCard>
                 </div>
             </div>
