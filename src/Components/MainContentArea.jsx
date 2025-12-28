@@ -14,8 +14,9 @@ const FleetCard=({fleet,updatedDriver,toggleAvailable,deleteFleet})=>{
                 <p>Driver : {fleet.driverName}</p>
                 <p>Availablity : {fleet.available ? "Available" : "Not Available"}</p>
                 <button onClick={changeDriver}>Update Driver</button>
-                <button onClick={toggleAvailable(fleet.id)}>Toggle Status</button>
-                <button onClick={deleteFleet(fleet.id)}>Delete</button>
+                <button onClick={() => toggleAvailable(fleet.id)}>Toggle</button>
+<button onClick={() => deleteFleet(fleet.id)}>Delete</button>
+
             </div>
         </>
     )

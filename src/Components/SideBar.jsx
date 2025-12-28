@@ -1,5 +1,5 @@
 import { useState } from "react";
-function SideBar(){
+function SideBar({addFleet}){
     const [form,setForm] =  useState({
         registerNo : "",
         category:"Car",
@@ -19,7 +19,7 @@ function SideBar(){
         <>
             <h3> Add Fleet</h3>
             <input placeholder="Veichle Register No " value={form.registerNo} onChange={(e)=>setForm({...form,registerNo:e.target.value})}/>
-            <input placeholder="Driver Name" value={form.registerNo} onChange={(e)=>setForm({...form,driverName:e.target.value})}/>
+            <input placeholder="Driver Name" value={form.driverName} onChange={(e)=>setForm({...form,driverName:e.target.value})}/>
             <select onChange={(e)=>setForm({...form,category:e.target.value})}>
                 <option>Car</option>
                 <option>Auto</option>

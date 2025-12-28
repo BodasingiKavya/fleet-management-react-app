@@ -1,5 +1,7 @@
 import { useState,useRef,useEffect,useContext } from "react";
  import { useNavigate } from "react-router-dom";
+ import { AuthContext } from '../AuthContext';
+
 function Login(){
     const [email,setEmail] = useState('');
     const [password,setPassword] =useState('');

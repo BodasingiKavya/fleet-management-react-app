@@ -1,21 +1,23 @@
-import {Routes,Route, BrowserRouter} from 'react-router-dom'
-import Login from './pages/Login';
-import Admin from './pages/Admin';
-import ProtectedRoute from './ProtectedRoute';
+import { Routes, Route } from 'react-router-dom'
+import Login from './pages/Login'
+import Admin from './pages/Admin'
+import ProtectedRoute from './ProtectedRoute'
+import { Navigate } from 'react-router-dom'
 
 function App() {
-
-  return (  
-    <BrowserRouter>
-      <Routes>
-        <Route path='/login' element={<Login/>}>/</Route>
-        <Route path='/admin' element={
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/admin"
+        element={
           <ProtectedRoute>
-            <Admin/>
+            <Admin />
           </ProtectedRoute>
-        }/>
-      </Routes>
-    </BrowserRouter>
+        }
+      />
+    </Routes>
   )
 }
 
